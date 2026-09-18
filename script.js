@@ -6,7 +6,7 @@ const translations = {
         badge: "🟢 Disponible para proyectos",
         heroTitle: "Desarrollador Frontend & Especialista en Traducción",
         heroDesc: "Creo sitios web modernos, rápidos y adaptables, e integro soluciones lingüísticas precisas entre español e inglés.",
-        btnContact: "Contactar",
+        btnContact: "📱 Contactar por WhatsApp",
         btnServices: "Ver Servicios",
         servicesTitle: "Servicios Especializados",
         s1Title: "Desarrollo Web Frontend",
@@ -14,15 +14,15 @@ const translations = {
         s2Title: "Traducción & Corrección",
         s2Desc: "Traducción técnica y profesional de documentos, aplicaciones y CVs de Español a Inglés y viceversa.",
         footerTitle: "¿Tienes un proyecto en mente?",
-        footerDesc: "Hablemos y hagámoslo realidad hoy mismo.",
-        btnMail: "Enviar Mensaje",
+        footerDesc: "Hablemos directamente y hagámoslo realidad hoy mismo.",
+        btnMail: "📱 Enviar mensaje al WhatsApp",
         btnLangText: "🌐 Switch to English"
     },
     en: {
         badge: "🟢 Available for work",
         heroTitle: "Frontend Web Developer & Translation Specialist",
         heroDesc: "I build modern, fast, responsive websites and deliver precise English-Spanish language solutions.",
-        btnContact: "Contact Me",
+        btnContact: "📱 Contact on WhatsApp",
         btnServices: "View Services",
         servicesTitle: "Specialized Services",
         s1Title: "Frontend Web Development",
@@ -30,8 +30,8 @@ const translations = {
         s2Title: "Translation & Proofreading",
         s2Desc: "Professional English to Spanish translation, proofreading, and technical document adaptation.",
         footerTitle: "Have a project in mind?",
-        footerDesc: "Let's talk and build it together right now.",
-        btnMail: "Send Message",
+        footerDesc: "Let's talk directly and build it together right now.",
+        btnMail: "📱 Send WhatsApp Message",
         btnLangText: "🌐 Cambiar a Español"
     }
 };
