@@ -1,7 +1,8 @@
 :root {
-    --bg: #0f172a;
-    --card-bg: #1e293b;
-    --text: #f8fafc;
+    --bg: #0b0f19;
+    --card-bg: #161f32;
+    --card-border: #23314d;
+    --text: #f1f5f9;
     --text-muted: #94a3b8;
     --primary: #38bdf8;
     --primary-hover: #0284c7;
@@ -20,16 +21,34 @@ body {
     line-height: 1.6;
 }
 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Navbar */
 .navbar {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--card-border);
+    background: rgba(11, 15, 25, 0.8);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
 }
 
 .logo span {
@@ -37,13 +56,15 @@ body {
 }
 
 .btn-lang {
-    background: transparent;
-    border: 1px solid var(--primary);
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid var(--card-border);
     color: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.2s ease;
 }
 
 .btn-lang:hover {
@@ -51,29 +72,38 @@ body {
     color: var(--bg);
 }
 
+/* Hero Section */
 .hero {
+    padding: 5rem 0 4rem 0;
     text-align: center;
-    padding: 5rem 10%;
-    max-width: 800px;
-    margin: 0 auto;
+}
+
+.hero-container {
+    max-width: 700px;
 }
 
 .badge {
+    display: inline-block;
     background: rgba(56, 189, 248, 0.1);
     color: var(--primary);
-    padding: 0.3rem 0.8rem;
-    border-radius: 12px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
     font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin: 1.5rem 0;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
 }
 
 .hero p {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 2rem;
 }
 
@@ -83,12 +113,17 @@ body {
     justify-content: center;
 }
 
+/* Buttons */
 .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
 }
 
 .btn.primary {
@@ -96,38 +131,121 @@ body {
     color: var(--bg);
 }
 
+.btn.primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
 .btn.secondary {
-    border: 1px solid var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--card-border);
     color: var(--text);
 }
 
+.btn.secondary:hover {
+    border-color: var(--text-muted);
+    transform: translateY(-2px);
+}
+
+.btn-lg {
+    padding: 0.9rem 2rem;
+}
+
+/* Services */
 .services {
-    padding: 4rem 10%;
+    padding: 3rem 0 5rem 0;
+}
+
+.section-title {
     text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 1.5rem;
 }
 
 .card {
     background: var(--card-bg);
-    padding: 2rem;
+    border: 1px solid var(--card-border);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
 }
 
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.card-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.card-tags li {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+}
+
+/* Footer / Contact */
 .footer {
+    padding: 4rem 0;
+    border-top: 1px solid var(--card-border);
     text-align: center;
-    padding: 4rem 10%;
-    background: var(--card-bg);
-    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
